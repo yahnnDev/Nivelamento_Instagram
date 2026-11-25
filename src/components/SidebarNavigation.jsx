@@ -32,24 +32,26 @@ export default function SidebarNavigation({
       <a
         href="/"
         aria-label="Instagram - página inicial"
-        className="mb-28 flex h-12 shrink-0 items-center px-3"
+        className="flex h-12 shrink-0 items-center px-3"
       >
         <span className="flex w-10 shrink-0 items-center justify-center">
           {brandIcon}
         </span>
       </a>
 
-      <div className="flex flex-col gap-3">
-        {items.map((item) => (
-          <MenuItem key={item.id} item={item} />
-        ))}
+      <div className="flex flex-1 flex-col justify-center">
+        <div className="flex flex-col gap-3">
+          {items.map((item) => (
+            <MenuItem key={item.id} item={item} />
+          ))}
+        </div>
+
+        <div className="mt-14">
+          <MenuItem item={createItem} />
+        </div>
       </div>
 
-      <div className="mt-14">
-        <MenuItem item={createItem} />
-      </div>
-
-      <div className="mt-auto">
+      <div>
         <MenuItem item={moreItem} />
       </div>
     </nav>

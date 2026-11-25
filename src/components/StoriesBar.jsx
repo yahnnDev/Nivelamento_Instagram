@@ -8,7 +8,7 @@ const STORIES_STEP = 2;
 export default function StoriesBar({ stories }) {
   const [startIndex, setStartIndex] = useState(0);
 
-  // constante com o  
+  // constante com o
   const maxStartIndex = Math.max(0, stories.length - STORIES_PER_PAGE);
   const visibleStories = stories.slice(
     startIndex,
@@ -27,7 +27,7 @@ export default function StoriesBar({ stories }) {
 
   return (
     <div className="w-full">
-      <div className="flex w-full gap-2">
+      <div className="flex w-full justify-between gap-2">
         {visibleStories.map((story, index) => {
           const isFirstStory = index === 0;
           const isLastStory = index === visibleStories.length - 1;
@@ -41,7 +41,7 @@ export default function StoriesBar({ stories }) {
                   type="button"
                   aria-label="Ver próximos Stories"
                   onClick={showNextStories}
-                  className="absolute -right-3 top-5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-md"
+                  className="absolute right-0 top-5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-md"
                 >
                   <FiChevronRight size={18} />
                 </button>
